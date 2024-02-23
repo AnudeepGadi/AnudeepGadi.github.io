@@ -1,0 +1,35 @@
+<div class="container-fluid main-container" id="experience-tab">
+    <div class="container-fluid inside-main-container">
+        <h1 class="heading">
+            Where I’ve Worked
+        </h1>
+
+        <div class="row" style="padding-top: 5%;">
+            <div class="col-md-3">
+                <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills" orientation="vertical">
+                    <li ngbNavItem={{experience.$id}} *ngFor="let experience of experiences" style="background-color: #261C2C;">
+                        <a ngbNavLink class="company">{{experience.$company}}</a>
+                        <ng-template ngbNavContent>
+                            <div>
+                                <p class="position">{{experience.$position}}</p>
+                                <p class="dates"> {{experience.$startdate}} - {{experience.$enddate}}</p>
+                            </div>
+                            <div>
+                                <p class="location">{{experience.$location}}</p>
+                            </div>
+                            <ul *ngFor="let resposibilty of experience.$responsilities">
+                                <li style="list-style-type: square; text-align: justify;">{{resposibilty}}</li>
+                            </ul>
+                        </ng-template>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="col-md-9">
+                <div [ngbNavOutlet]="nav" class="ms-4"></div>
+            </div>
+        </div>
+
+
+    </div>
+</div>

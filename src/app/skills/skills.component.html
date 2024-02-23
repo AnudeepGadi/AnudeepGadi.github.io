@@ -1,0 +1,23 @@
+<div class="container-fluid main-container" id="skills-tab">
+    <div class="container-fluid inside-main-container">
+        <h1 class="heading">
+            Skills & Achivements
+        </h1>
+        <hr style="margin-top: 5%;">
+        <div class="row" *ngFor="let skill of skills">
+            <div class="col-md-3">
+                <strong>{{skill.skill}}</strong>
+            </div>
+            <div class="col-md-9">
+                {{skill.skill_name}}
+            </div>
+        </div>
+        <hr>
+        <div class="row" *ngFor="let certificate of certifications">
+            <li style="content: 〉;">{{certificate}}</li>
+        </div>
+        <hr>
+        <li>Awarded 'TCS Hall of fame' for technical excellence for the financial year 2020-21</li>
+        <li>NCC(The National Cadet Corps is the youth wing of the Indian Armed Forces) ‘B’ certificate holder</li>
+    </div>
+</div>
